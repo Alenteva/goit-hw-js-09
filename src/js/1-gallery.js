@@ -72,7 +72,6 @@ const image = images
           <img
             class="gallery-image"
             src="${img.preview}"
-            data-source="${img.original}"
             width="360px"
             height="200px"
             alt="${img.description}"
@@ -84,3 +83,12 @@ const image = images
   .join('');
 const gallery = document.querySelector('.gallery');
 gallery.insertAdjacentHTML('beforeend', image);
+
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: '250ms',
+});
