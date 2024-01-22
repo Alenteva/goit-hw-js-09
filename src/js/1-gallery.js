@@ -89,5 +89,5 @@ gallery.insertAdjacentHTML('beforeend', image);
 let lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionPosition: 'bottom',
-  captionDelay: '250ms',
+  captionDelay: 250,
 });
