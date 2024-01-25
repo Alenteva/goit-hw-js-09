@@ -24,6 +24,9 @@ function clearFormState() {
 // Відстеження події submit на формі
 form.addEventListener('submit', event => {
   event.preventDefault();
+  if (form.email.value.trim() === '' || form.message.value.trim() === '') {
+    alert('Please fill in all fields of the form before submitting');
+  }
   const formData = {
     email: form.email.value,
     message: form.message.value,
