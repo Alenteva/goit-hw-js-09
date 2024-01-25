@@ -11,8 +11,8 @@ form.addEventListener('input', function saveForm() {
 document.addEventListener('DOMContentLoaded', function restoreFormState() {
   const savedFormData = JSON.parse(localStorage.getItem('feedback-form-state'));
   if (savedFormData) {
-    form.email.value.trim() = savedFormData.email;
-    form.message.value.trim() = savedFormData.message;
+    form.email.value = savedFormData.email;
+    form.message.value = savedFormData.message;
   }
 });
 // Очищення локального сховища та полів форми після відправки форми,
