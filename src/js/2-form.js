@@ -11,8 +11,8 @@ form.addEventListener('input', function saveForm() {
 document.addEventListener('DOMContentLoaded', function restoreFormState() {
   const savedFormData = JSON.parse(localStorage.getItem('feedback-form-state'));
   if (savedFormData) {
-    form.email.value = savedFormData.email;
-    form.message.value = savedFormData.message;
+    form.email.value.trim() = savedFormData.email;
+    form.message.value.trim() = savedFormData.message;
   }
 });
 // Очищення локального сховища та полів форми після відправки форми,
@@ -28,8 +28,8 @@ form.addEventListener('submit', event => {
     alert('Please fill in all fields of the form before submitting');
   }
   const formData = {
-    email: form.email.value,
-    message: form.message.value,
+    email: form.email.value.trim(),
+    message: form.message.value.trim(),
   };
   clearFormState();
 
